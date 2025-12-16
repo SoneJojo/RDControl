@@ -22,6 +22,7 @@ namespace RDControl.App.Register
             _equipmentService = equipmentService;
             _userService = userService;
             InitializeComponent();
+            txtUser.Text = MainForm.user.Name.ToString();
             LoadCombo();
         }
         private void LoadCombo()
@@ -34,13 +35,11 @@ namespace RDControl.App.Register
             cboTechnician.ValueMember = "Id";
             cboTechnician.DisplayMember = "Name";
             cboTechnician.DataSource = _technicianService.Get<TechnicianViewModel>().ToList();
-            cboUser.ValueMember = "Id";
-            cboUser.DisplayMember = "Name";
-            cboUser.DataSource = _userService.Get<UserViewModel>().ToList();
         }
         private void FormToObject(Report report)
         {
             report.Date = dtpDate.Value;
+            report._User = MainForm.user;
             report.Ticket = txtTicket.Text;
             report.Hours = decimal.Parse(txtHours.Text);
             report.Hours_price = decimal.Parse(txtHourlyRate.Text);
@@ -56,10 +55,10 @@ namespace RDControl.App.Register
                 var tech = _technicianService.GetById<Technician>(technicianId);
                 report._Technician = tech;
             }
-            if (int.TryParse(cboUser.SelectedValue.ToString(), out int userId)){
-                var user = _userService.GetById<User>(userId);
-                report._User = user;
-            }
+            //if (int.TryParse(cboUser.SelectedValue.ToString(), out int userId)){
+            //    var user = _userService.GetById<User>(userId);
+            //    report._User = user;
+            //}
         }
         protected override void Save()
         {
@@ -119,7 +118,8 @@ namespace RDControl.App.Register
             cboEquipment.SelectedValue = record?.Cells["Equip"].Value;
             cboSituation.SelectedItem = record?.Cells["Situation"].Value;
             cboTechnician.SelectedValue = record?.Cells["_Technician"].Value;
-            cboUser.SelectedItem = record?.Cells["_User"].Value;
+            txtUser.Text = record?.Cells["_User"].Value.ToString();
+            //cboUser.SelectedItem = record?.Cells["_User"].Value;
             txtTicket.Text = record?.Cells["Ticket"].Value.ToString();
             txtDescription.Text = record?.Cells["Description"].Value.ToString();
             txtObservation.Text = record?.Cells["Observation"].Value.ToString();

@@ -33,7 +33,6 @@
             txtId = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             pictureBox2 = new PictureBox();
             txtDescription = new ReaLTaiizor.Controls.MaterialMultiLineTextBoxEdit();
-            cboUser = new ReaLTaiizor.Controls.MaterialComboBox();
             cboEquipment = new ReaLTaiizor.Controls.MaterialComboBox();
             cboSituation = new ReaLTaiizor.Controls.MaterialComboBox();
             txtObservation = new ReaLTaiizor.Controls.MaterialMultiLineTextBoxEdit();
@@ -43,6 +42,7 @@
             txtHourlyRate = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             dtpDate = new ReaLTaiizor.Controls.PoisonDateTime();
             lblDate = new ReaLTaiizor.Controls.MaterialLabel();
+            txtUser = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             tabPageRegister.SuspendLayout();
             tabControlRegister.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -50,6 +50,7 @@
             // 
             // tabPageRegister
             // 
+            tabPageRegister.Controls.Add(txtUser);
             tabPageRegister.Controls.Add(lblDate);
             tabPageRegister.Controls.Add(dtpDate);
             tabPageRegister.Controls.Add(txtHourlyRate);
@@ -59,7 +60,6 @@
             tabPageRegister.Controls.Add(txtObservation);
             tabPageRegister.Controls.Add(cboSituation);
             tabPageRegister.Controls.Add(cboEquipment);
-            tabPageRegister.Controls.Add(cboUser);
             tabPageRegister.Controls.Add(txtDescription);
             tabPageRegister.Controls.Add(pictureBox2);
             tabPageRegister.Controls.Add(txtId);
@@ -68,7 +68,6 @@
             tabPageRegister.Controls.SetChildIndex(txtId, 0);
             tabPageRegister.Controls.SetChildIndex(pictureBox2, 0);
             tabPageRegister.Controls.SetChildIndex(txtDescription, 0);
-            tabPageRegister.Controls.SetChildIndex(cboUser, 0);
             tabPageRegister.Controls.SetChildIndex(cboEquipment, 0);
             tabPageRegister.Controls.SetChildIndex(cboSituation, 0);
             tabPageRegister.Controls.SetChildIndex(txtObservation, 0);
@@ -78,6 +77,7 @@
             tabPageRegister.Controls.SetChildIndex(txtHourlyRate, 0);
             tabPageRegister.Controls.SetChildIndex(dtpDate, 0);
             tabPageRegister.Controls.SetChildIndex(lblDate, 0);
+            tabPageRegister.Controls.SetChildIndex(txtUser, 0);
             // 
             // cboTechnician
             // 
@@ -169,29 +169,6 @@
             txtDescription.TabStop = false;
             txtDescription.TextAlign = HorizontalAlignment.Left;
             txtDescription.UseSystemPasswordChar = false;
-            // 
-            // cboUser
-            // 
-            cboUser.AutoResize = false;
-            cboUser.BackColor = Color.FromArgb(255, 255, 255);
-            cboUser.Depth = 0;
-            cboUser.DrawMode = DrawMode.OwnerDrawVariable;
-            cboUser.DropDownHeight = 174;
-            cboUser.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboUser.DropDownWidth = 121;
-            cboUser.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
-            cboUser.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            cboUser.FormattingEnabled = true;
-            cboUser.Hint = "User";
-            cboUser.IntegralHeight = false;
-            cboUser.ItemHeight = 43;
-            cboUser.Location = new Point(6, 115);
-            cboUser.MaxDropDownItems = 4;
-            cboUser.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            cboUser.Name = "cboUser";
-            cboUser.Size = new Size(239, 49);
-            cboUser.StartIndex = 0;
-            cboUser.TabIndex = 21;
             // 
             // cboEquipment
             // 
@@ -401,6 +378,37 @@
             lblDate.TabIndex = 32;
             lblDate.Text = "Service Date";
             // 
+            // txtUser
+            // 
+            txtUser.AnimateReadOnly = false;
+            txtUser.AutoCompleteMode = AutoCompleteMode.None;
+            txtUser.AutoCompleteSource = AutoCompleteSource.None;
+            txtUser.BackgroundImageLayout = ImageLayout.None;
+            txtUser.CharacterCasing = CharacterCasing.Normal;
+            txtUser.Depth = 0;
+            txtUser.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtUser.HideSelection = true;
+            txtUser.Hint = "User";
+            txtUser.LeadingIcon = null;
+            txtUser.Location = new Point(6, 115);
+            txtUser.MaxLength = 32767;
+            txtUser.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            txtUser.Name = "txtUser";
+            txtUser.PasswordChar = '\0';
+            txtUser.PrefixSuffixText = null;
+            txtUser.ReadOnly = false;
+            txtUser.RightToLeft = RightToLeft.No;
+            txtUser.SelectedText = "";
+            txtUser.SelectionLength = 0;
+            txtUser.SelectionStart = 0;
+            txtUser.ShortcutsEnabled = true;
+            txtUser.Size = new Size(239, 48);
+            txtUser.TabIndex = 33;
+            txtUser.TabStop = false;
+            txtUser.TextAlign = HorizontalAlignment.Left;
+            txtUser.TrailingIcon = null;
+            txtUser.UseSystemPasswordChar = false;
+            // 
             // ReportForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -421,7 +429,6 @@
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtId;
         private PictureBox pictureBox2;
         private ReaLTaiizor.Controls.MaterialMultiLineTextBoxEdit txtDescription;
-        private ReaLTaiizor.Controls.MaterialComboBox cboUser;
         private ReaLTaiizor.Controls.MaterialComboBox cboSituation;
         private ReaLTaiizor.Controls.MaterialComboBox cboEquipment;
         private ReaLTaiizor.Controls.MaterialComboBox cboPayment;
@@ -431,5 +438,6 @@
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtTicket;
         private ReaLTaiizor.Controls.PoisonDateTime dtpDate;
         private ReaLTaiizor.Controls.MaterialLabel lblDate;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtUser;
     }
 }

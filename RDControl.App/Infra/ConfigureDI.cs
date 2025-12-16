@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging.Abstractions;
-//using Microsoft.VisualBasic.ApplicationServices;
+using RDControl.App.Others;
 using RDControl.App.Register;
 using RDControl.App.ViewModel;
 using RDControl.Domain.Base;
@@ -55,7 +55,7 @@ namespace RDControl.App.Infra
             services.AddScoped<UserForm, UserForm>();
 
 
-            //services.AddTransient<LoginForm, LoginForm>();
+            services.AddTransient<LoginForm, LoginForm>();
 
             services.AddSingleton(
                 new MapperConfiguration(
@@ -71,9 +71,6 @@ namespace RDControl.App.Infra
                             .ForMember(m => m._Technician, m => m.MapFrom(e => e._Technician!.Name))
                             .ForMember(m => m.Equip, m => m.MapFrom(e => $"{e.Equip!.Id} - {e.Equip!.Model}"))
                             .ForMember(m => m._User, m => m.MapFrom(e => e._User!.Name));
-
-
-
                     },
                     NullLoggerFactory.Instance).CreateMapper());
 

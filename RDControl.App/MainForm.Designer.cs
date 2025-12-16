@@ -62,42 +62,42 @@
             // userToolStripMenuItem
             // 
             userToolStripMenuItem.Name = "userToolStripMenuItem";
-            userToolStripMenuItem.Size = new Size(180, 22);
+            userToolStripMenuItem.Size = new Size(132, 22);
             userToolStripMenuItem.Text = "User";
             userToolStripMenuItem.Click += userToolStripMenuItem_Click;
             // 
             // equipmentToolStripMenuItem
             // 
             equipmentToolStripMenuItem.Name = "equipmentToolStripMenuItem";
-            equipmentToolStripMenuItem.Size = new Size(180, 22);
+            equipmentToolStripMenuItem.Size = new Size(132, 22);
             equipmentToolStripMenuItem.Text = "Equipment";
             equipmentToolStripMenuItem.Click += equipmentToolStripMenuItem_Click;
             // 
             // clientToolStripMenuItem
             // 
             clientToolStripMenuItem.Name = "clientToolStripMenuItem";
-            clientToolStripMenuItem.Size = new Size(180, 22);
+            clientToolStripMenuItem.Size = new Size(132, 22);
             clientToolStripMenuItem.Text = "Client";
             clientToolStripMenuItem.Click += clientToolStripMenuItem_Click;
             // 
             // placeToolStripMenuItem
             // 
             placeToolStripMenuItem.Name = "placeToolStripMenuItem";
-            placeToolStripMenuItem.Size = new Size(180, 22);
+            placeToolStripMenuItem.Size = new Size(132, 22);
             placeToolStripMenuItem.Text = "Place";
             placeToolStripMenuItem.Click += placeToolStripMenuItem_Click;
             // 
             // technicianToolStripMenuItem
             // 
             technicianToolStripMenuItem.Name = "technicianToolStripMenuItem";
-            technicianToolStripMenuItem.Size = new Size(180, 22);
+            technicianToolStripMenuItem.Size = new Size(132, 22);
             technicianToolStripMenuItem.Text = "Technician";
             technicianToolStripMenuItem.Click += technicianToolStripMenuItem_Click;
             // 
             // reportToolStripMenuItem
             // 
             reportToolStripMenuItem.Name = "reportToolStripMenuItem";
-            reportToolStripMenuItem.Size = new Size(180, 22);
+            reportToolStripMenuItem.Size = new Size(132, 22);
             reportToolStripMenuItem.Text = "Report";
             reportToolStripMenuItem.Click += reportToolStripMenuItem_Click;
             // 
@@ -118,6 +118,7 @@
             closeToolStripMenuItem.Name = "closeToolStripMenuItem";
             closeToolStripMenuItem.Size = new Size(48, 20);
             closeToolStripMenuItem.Text = "Close";
+            closeToolStripMenuItem.Click += closeToolStripMenuItem_Click;
             // 
             // MainForm
             // 

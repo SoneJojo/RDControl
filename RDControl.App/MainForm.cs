@@ -1,17 +1,26 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using RDControl.App.Base;
 using RDControl.App.Infra;
+using RDControl.App.Others;
 using RDControl.App.Register;
+using RDControl.Domain.Entities;
 
 namespace RDControl.App
 {
     public partial class MainForm : BaseForm
     {
+        public static User user { get; set; }
         public MainForm()
         {
             InitializeComponent();
+            LoadLogin();
         }
         #region events
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
         private void equipmentToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowForm<EquipmentForm>();
@@ -59,5 +68,18 @@ namespace RDControl.App
                 cad.Show();
             }
         }
+        private void LoadLogin()
+        {
+            var login = ConfigureDI.serviceProvider!.GetService<LoginForm>();
+            if (login != null && !login.IsDisposed)
+            {
+                if (login.ShowDialog() != DialogResult.OK)
+                {
+                    Environment.Exit(0);
+                }
+            }
+        }
+
+        
     }
 }
