@@ -7,13 +7,16 @@ namespace RDControl.App.Others
 {
     public partial class LoginForm : BaseForm
     {
+        #region Constructor Method
         private readonly IBaseService<User> _userService;
         public LoginForm(IBaseService<User> userService)
         {
             _userService = userService;
             InitializeComponent();
         }
+        #endregion
 
+        #region Events
         private void btnLogin_Click(object sender, EventArgs e)
         {
             User user = ReceiveUser(txtLogin.Text, txtPassword.Text);
@@ -34,6 +37,9 @@ namespace RDControl.App.Others
         {
             txtPassword.PasswordChar = chkPassword.Checked ? '\0' : '*';
         }
+        #endregion
+
+        #region Methods
         private User? ReceiveUser(string login, string password)
         {
             CheckCredentials();
@@ -57,5 +63,6 @@ namespace RDControl.App.Others
                 _userService.Add<User, User, UserValidator>(user);
             }
         }
+        #endregion
     }
 }

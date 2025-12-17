@@ -8,6 +8,7 @@ namespace RDControl.App.Register
 {
     public partial class UserForm : BaseRegisterForm
     {
+        #region Constructor and Variables
         private IBaseService<User> _userService;
         private List<UserViewModel>? users;
         public UserForm(IBaseService<User> userService)
@@ -15,6 +16,9 @@ namespace RDControl.App.Register
             _userService = userService;
             InitializeComponent();
         }
+        #endregion
+
+        #region Methods
         private void FormToObject(User user)
         {
             user.Name = txtName.Text;
@@ -79,5 +83,6 @@ namespace RDControl.App.Register
         {
             txtPassword.PasswordChar = chkPassword.Checked ? '\0' : '*';
         }
+        #endregion
     }
 }

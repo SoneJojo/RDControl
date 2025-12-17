@@ -9,6 +9,7 @@ namespace RDControl.App.Register
 {
     public partial class ReportForm : BaseRegisterForm
     {
+        #region Constructor and Variables
         private IBaseService<Report> _reportService;
         private List<ReportViewModel>? reports;
 
@@ -25,6 +26,9 @@ namespace RDControl.App.Register
             txtUser.Text = MainForm.user.Name.ToString();
             LoadCombo();
         }
+        #endregion
+
+        #region Methods
         private void LoadCombo()
         {
             cboSituation.DataSource = Enum.GetValues(typeof(SituationType));
@@ -55,10 +59,6 @@ namespace RDControl.App.Register
                 var tech = _technicianService.GetById<Technician>(technicianId);
                 report._Technician = tech;
             }
-            //if (int.TryParse(cboUser.SelectedValue.ToString(), out int userId)){
-            //    var user = _userService.GetById<User>(userId);
-            //    report._User = user;
-            //}
         }
         protected override void Save()
         {
@@ -119,7 +119,6 @@ namespace RDControl.App.Register
             cboSituation.SelectedItem = record?.Cells["Situation"].Value;
             cboTechnician.SelectedValue = record?.Cells["_Technician"].Value;
             txtUser.Text = record?.Cells["_User"].Value.ToString();
-            //cboUser.SelectedItem = record?.Cells["_User"].Value;
             txtTicket.Text = record?.Cells["Ticket"].Value.ToString();
             txtDescription.Text = record?.Cells["Description"].Value.ToString();
             txtObservation.Text = record?.Cells["Observation"].Value.ToString();
@@ -127,5 +126,6 @@ namespace RDControl.App.Register
             txtHourlyRate.Text = record?.Cells["Hours_price"].Value.ToString();
             cboPayment.SelectedItem = record?.Cells["Payment"].Value;
         }
+        #endregion
     }
 }

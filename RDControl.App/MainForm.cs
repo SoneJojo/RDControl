@@ -9,13 +9,21 @@ namespace RDControl.App
 {
     public partial class MainForm : BaseForm
     {
+        #region Constructor and Variable
         public static User user { get; set; }
         public MainForm()
         {
             InitializeComponent();
             LoadLogin();
         }
-        #region events
+        #endregion
+
+        #region Events
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
+
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
@@ -59,6 +67,8 @@ namespace RDControl.App
             }
         }
         #endregion
+
+        #region Methods
         private void ShowForm<TFormulario>() where TFormulario : Form
         {
             var cad = ConfigureDI.serviceProvider!.GetService<TFormulario>();
@@ -79,6 +89,7 @@ namespace RDControl.App
                 }
             }
         }
+        #endregion
 
         
     }

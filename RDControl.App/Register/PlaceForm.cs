@@ -8,6 +8,7 @@ namespace RDControl.App.Register
 {
     public partial class PlaceForm : BaseRegisterForm
     {
+        #region Constructor and Variables
         private IBaseService<Place> _placeService;
         private List<PlaceViewModel>? places;
         private IBaseService<Client> _clientService;
@@ -18,6 +19,9 @@ namespace RDControl.App.Register
             InitializeComponent();
             LoadCombo();
         }
+        #endregion
+
+        #region Methods
         private void LoadCombo()
         {
             cboClient.ValueMember = "Id";
@@ -84,5 +88,6 @@ namespace RDControl.App.Register
             txtAddress.Text = record?.Cells["Address"].Value.ToString();
             cboClient.SelectedItem = record?.Cells["_Client"].Value;
         }
+        #endregion
     }
 }
