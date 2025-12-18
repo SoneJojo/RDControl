@@ -6,12 +6,16 @@ namespace RDControl.Repository.Repository
 {
     public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : BaseEntity<int>
     {
+        #region Variable and Definition
         protected RDControlContext _mySqlContext;
 
         public BaseRepository(RDControlContext mySqlContext)
         {
             _mySqlContext = mySqlContext;
         }
+        #endregion
+
+        #region Methods
 
         public void ClearChangeTracker()
         {
@@ -66,5 +70,6 @@ namespace RDControl.Repository.Repository
             }
             return dbContext.ToList().Find(x => x.Id == (int)id);
         }
+        #endregion
     }
 }

@@ -16,8 +16,12 @@ namespace RDControl.App.Infra
 {
     public static class ConfigureDI
     {
+        #region Variables
         public static ServiceCollection? services;
         public static IServiceProvider? serviceProvider;
+        #endregion
+
+        #region AutoMapper
         public static void ConfigureServices()
         {
             //Database Config
@@ -76,5 +80,6 @@ namespace RDControl.App.Infra
 
             serviceProvider = services.BuildServiceProvider();
         }
+#endregion
     }
 }

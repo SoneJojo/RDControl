@@ -70,36 +70,35 @@ namespace RDControl.App.Base
                     if (clientPoint.Y <= RESIZE_HANDLE_SIZE)
                     {
                         if (clientPoint.X <= RESIZE_HANDLE_SIZE)
-                            m.Result = (IntPtr)20; // TopLeft
+                            m.Result = (IntPtr)20;
                         else if (clientPoint.X < (Size.Width - RESIZE_HANDLE_SIZE))
-                            m.Result = (IntPtr)19; // Top
+                            m.Result = (IntPtr)19;
                         else
-                            m.Result = (IntPtr)21; // TopRight
+                            m.Result = (IntPtr)21;
                     }
                     else if (clientPoint.Y <= (Size.Height - RESIZE_HANDLE_SIZE))
                     {
                         if (clientPoint.X <= RESIZE_HANDLE_SIZE)
-                            m.Result = (IntPtr)20; // Left
+                            m.Result = (IntPtr)20;
                         else if (clientPoint.X < (Size.Width - RESIZE_HANDLE_SIZE))
-                            m.Result = (IntPtr)2;  // Caption 
+                            m.Result = (IntPtr)2;
                         else
-                            m.Result = (IntPtr)21; // Right
+                            m.Result = (IntPtr)21;
                     }
                     else
                     {
                         if (clientPoint.X <= RESIZE_HANDLE_SIZE)
-                            m.Result = (IntPtr)20; // BottomLeft
+                            m.Result = (IntPtr)20;
                         else if (clientPoint.X < (Size.Width - RESIZE_HANDLE_SIZE))
-                            m.Result = (IntPtr)19; // Bottom
+                            m.Result = (IntPtr)19;
                         else
-                            m.Result = (IntPtr)21; // BottomRight
+                            m.Result = (IntPtr)21;
                     }
                 }
                 return;
             }
             base.WndProc(ref m);
         }
-
         #endregion
     }
 }

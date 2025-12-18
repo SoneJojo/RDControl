@@ -8,6 +8,7 @@ namespace RDControl.App.Register
 {
     public partial class EquipmentForm : BaseRegisterForm
     {
+        #region Constructor and Variables
         private IBaseService<Equipment> _equipmentService;
         private List<EquipmentViewModel>? equipments;
         private IBaseService<Place> _placeService;
@@ -19,6 +20,9 @@ namespace RDControl.App.Register
             InitializeComponent();
             LoadCombo();
         }
+        #endregion
+
+        #region Methods
         private void FormToObject(Equipment equipment)
         {
             equipment.Model = txtModel.Text;
@@ -85,5 +89,6 @@ namespace RDControl.App.Register
             txtModel.Text = record?.Cells["Model"].Value.ToString();
             cboPlace.SelectedItem = record?.Cells["_Place"].Value;
         }
+        #endregion
     }
 }

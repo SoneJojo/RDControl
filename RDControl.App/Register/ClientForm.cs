@@ -8,6 +8,7 @@ namespace RDControl.App.Register
 {
     public partial class ClientForm : BaseRegisterForm
     {
+        #region Constructor and Variables
         private IBaseService<Client> _clientService;
         private List<ClientViewModel>? clients;
         public ClientForm(IBaseService<Client> clientService)
@@ -15,6 +16,9 @@ namespace RDControl.App.Register
             _clientService = clientService;
             InitializeComponent();
         }
+        #endregion
+
+        #region Methods
         private void FormToObject(Client client)
         {
             client.Name = txtName.Text;
@@ -68,5 +72,6 @@ namespace RDControl.App.Register
             txtName.Text = record?.Cells["Name"].Value.ToString();
             txtCNPJ.Text = record?.Cells["CNPJ"].Value.ToString();
         }
+        #endregion
     }
 }

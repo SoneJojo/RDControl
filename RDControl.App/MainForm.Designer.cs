@@ -110,8 +110,8 @@
             // logoutToolStripMenuItem
             // 
             logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            logoutToolStripMenuItem.Size = new Size(59, 20);
-            logoutToolStripMenuItem.Text = "LogOut";
+            logoutToolStripMenuItem.Size = new Size(57, 20);
+            logoutToolStripMenuItem.Text = "Logout";
             logoutToolStripMenuItem.Click += logoutToolStripMenuItem_Click;
             // 
             // closeToolStripMenuItem
@@ -132,6 +132,7 @@
             IsMdiContainer = true;
             Location = new Point(0, 0);
             Name = "MainForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "MainForm";
             WindowState = FormWindowState.Maximized;
             Controls.SetChildIndex(menuStrip1, 0);

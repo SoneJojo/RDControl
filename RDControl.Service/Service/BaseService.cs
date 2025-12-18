@@ -6,6 +6,7 @@ namespace RDControl.Service.Service
 {
     public class BaseService<TEntity> : IBaseService<TEntity> where TEntity : IBaseEntity
     {
+        #region Variable and Definition
         private readonly IBaseRepository<TEntity> _baseRepository;
         private readonly IMapper _mapper;
 
@@ -14,6 +15,9 @@ namespace RDControl.Service.Service
             _baseRepository = baseRepository;
             _mapper = mapper;
         }
+        #endregion
+
+        #region Methods
 
         public TOutputModel Add<TInputModel, TOutputModel, TValidator>(TInputModel inputModel)
             where TInputModel : class
@@ -70,5 +74,6 @@ namespace RDControl.Service.Service
             var outputModel = _mapper.Map<TOutputModel>(entity);
             return outputModel;
         }
+        #endregion
     }
 }

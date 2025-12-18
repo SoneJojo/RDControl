@@ -9,6 +9,7 @@ namespace RDControl.App.Register
 {
     public partial class TechnicianForm : BaseRegisterForm
     {
+        #region Constructor and Variables
         private IBaseService<Technician> _technicianService;
         private List<TechnicianViewModel>? technicians;
         public TechnicianForm(IBaseService<Technician> technicianService)
@@ -17,6 +18,9 @@ namespace RDControl.App.Register
             InitializeComponent();
             LoadCombo();
         }
+        #endregion
+
+        #region Methods
         private void FormToObject(Technician technician)
         {
             technician.Name = txtName.Text;
@@ -78,5 +82,6 @@ namespace RDControl.App.Register
             txtCPF.Text = record?.Cells["CPF"].Value.ToString();
             cboTechType.SelectedItem = record?.Cells["TechType"].Value;
         }
+        #endregion
     }
 }

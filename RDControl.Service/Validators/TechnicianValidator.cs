@@ -10,7 +10,9 @@ namespace RDControl.Service.Validators
             RuleFor(m => m.Name)
                 .NotEmpty().WithMessage("Technician name is required.");
             RuleFor(m => m.CPF)
-                .NotEmpty().WithMessage("Technician CPF is required.");
+                .NotEmpty().WithMessage("Technician CPF is required.")
+                .MinimumLength(11).WithMessage("CPF must contain atleast 11 characters!")
+                .MaximumLength(14).WithMessage("CPF must contain 14 characters maximum!"); ;
             RuleFor(m => m.TechType)
                 .IsInEnum().WithMessage("Technician type is invalid.");
         }

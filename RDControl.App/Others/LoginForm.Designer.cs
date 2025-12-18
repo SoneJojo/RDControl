@@ -194,6 +194,7 @@
             Controls.Add(pictureBox2);
             Location = new Point(0, 0);
             Name = "LoginForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "LoginForm";
             Controls.SetChildIndex(pictureBox2, 0);
             Controls.SetChildIndex(chkPassword, 0);
