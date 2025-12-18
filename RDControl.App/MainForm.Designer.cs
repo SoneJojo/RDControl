@@ -37,7 +37,7 @@
             technicianToolStripMenuItem = new ToolStripMenuItem();
             reportToolStripMenuItem = new ToolStripMenuItem();
             reportToolStripMenuItem1 = new ToolStripMenuItem();
-            helpToolStripMenuItem = new ToolStripMenuItem();
+            logoutToolStripMenuItem = new ToolStripMenuItem();
             closeToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -45,7 +45,7 @@
             // menuStrip1
             // 
             menuStrip1.BackgroundImageLayout = ImageLayout.None;
-            menuStrip1.Items.AddRange(new ToolStripItem[] { registerToolStripMenuItem, reportToolStripMenuItem1, helpToolStripMenuItem, closeToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { registerToolStripMenuItem, reportToolStripMenuItem1, logoutToolStripMenuItem, closeToolStripMenuItem });
             menuStrip1.Location = new Point(0, 31);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 24);
@@ -107,11 +107,12 @@
             reportToolStripMenuItem1.Size = new Size(54, 20);
             reportToolStripMenuItem1.Text = "Report";
             // 
-            // helpToolStripMenuItem
+            // logoutToolStripMenuItem
             // 
-            helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            helpToolStripMenuItem.Size = new Size(44, 20);
-            helpToolStripMenuItem.Text = "Help";
+            logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            logoutToolStripMenuItem.Size = new Size(59, 20);
+            logoutToolStripMenuItem.Text = "LogOut";
+            logoutToolStripMenuItem.Click += logoutToolStripMenuItem_Click;
             // 
             // closeToolStripMenuItem
             // 
@@ -151,7 +152,7 @@
         private ToolStripMenuItem technicianToolStripMenuItem;
         private ToolStripMenuItem reportToolStripMenuItem;
         private ToolStripMenuItem reportToolStripMenuItem1;
-        private ToolStripMenuItem helpToolStripMenuItem;
+        private ToolStripMenuItem logoutToolStripMenuItem;
         private ToolStripMenuItem closeToolStripMenuItem;
     }
 }
